@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Render CI/CD Demo</title>
+</head>
+<body>
+<h1 id="msg">Loading...</h1>
+<script>
+    fetch("/api/message")
+      .then(res => res.text())
+      .then(text => document.getElementById("msg").innerText = text)
+      .catch(() => document.getElementById("msg").innerText = "Failed to load message");
+</script>
+</body>
+</html>
